@@ -1,0 +1,8 @@
+{
+  "/": {
+    "target": "http://121.41.88.67",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

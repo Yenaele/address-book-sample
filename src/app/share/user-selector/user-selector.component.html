@@ -1,0 +1,32 @@
+<div class="user-selector-wrapper">
+  <div class="quick-search-input-wrapper">
+    <nz-select
+      nzMode="multiple"
+      nzPlaceHolder="Select users"
+      [nzAllowClear]="true"
+      [nzServerSearch]="true"
+      [(ngModel)]="selectedUsers"
+      [compareWith]="compareFn"
+      (nzOnSearch)="onSearch($event)"
+      (ngModelChange)="valueChange($event)">
+      <ng-container *ngIf="!isLoading">
+        <nz-option *ngFor="let option of options"
+                   [nzValue]="option"
+                   [nzLabel]="option.name + '/' + option.userId + '[' + option.position + ']'">
+        </nz-option>
+      </ng-container>
+
+      <ng-container *ngIf="isLoading">
+        <nz-option nzDisabled nzCustomContent>
+          <em nz-icon nzType="loading" class="loading-icon"></em> Loading...
+        </nz-option>
+      </ng-container>
+    </nz-select>
+  </div>
+
+  <div class="address-book-choose-wrapper" (click)="openAddressBookDialog()">
+    <div class="open-address-book-button">
+      <em nz-icon nzType="user" nzTheme="outline"></em>
+    </div>
+  </div>
+</div>

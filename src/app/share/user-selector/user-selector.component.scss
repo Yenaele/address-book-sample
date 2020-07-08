@@ -1,0 +1,36 @@
+:host {
+  .user-selector-wrapper {
+    display: flex;
+
+    .quick-search-input-wrapper {
+      flex-grow: 1;
+      margin-right: 8px;
+
+      nz-select {
+        width: 100%;
+      }
+    }
+
+    .address-book-choose-wrapper {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+
+      .open-address-book-button {
+        color: #fff;
+        background-color: #1890ff;
+        padding: 5px 9px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #50a8ff;
+        }
+      }
+    }
+  }
+}
+
+.loading-icon {
+  margin-right: 8px;
+}

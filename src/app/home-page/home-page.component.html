@@ -1,0 +1,35 @@
+<div class="page-wrapper">
+  <div class="title-wrapper">
+    <h2>User Address Book Sample</h2>
+  </div>
+
+  <div class="sample-body-wrapper">
+    <div class="modal-sample-wrapper">
+      <div class="label-info-wrapper">use service to open modal</div>
+      <div class="modal-sample-body-wrapper">
+        <button nz-button nzType="primary"
+                (click)="openAddressBookDialog()">choose user
+        </button>
+      </div>
+    </div>
+
+    <div class="form-control-sample-wrapper">
+      <div class="label-info-wrapper">work as a form control</div>
+      <div class="form-control-sample-body-wrapper">
+        <form [formGroup]="form">
+          <app-user-selector formControlName="users"></app-user-selector>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="selected-value-wrapper">
+    value format:
+    <ng-container *ngIf="form">
+      {{form.value.users | json}}
+    </ng-container>
+
+  </div>
+</div>
+
+

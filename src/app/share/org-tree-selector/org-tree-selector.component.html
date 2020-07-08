@@ -1,0 +1,6 @@
+<nz-tree [nzData]="treeData"
+         [nzAsyncData]="true"
+         [nzShowLine]="true"
+         (nzClick)="searchUserByOrg($event)"
+         (nzExpandChange)="queryNodeChild($event)">
+</nz-tree>

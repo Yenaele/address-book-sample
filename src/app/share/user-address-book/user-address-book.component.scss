@@ -1,0 +1,115 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+
+  .user-address-book-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+
+    .org-select-wrapper {
+      @extend .basic-list-layout;
+
+      .org-tree-label {
+        @extend .label-info;
+      }
+
+      .org-tree-wrapper {
+        @extend .list-window;
+      }
+
+      .user-search-wrapper {
+        flex-shrink: 0;
+      }
+    }
+
+    .user-wrapper {
+      @extend .basic-list-layout;
+
+      .user-scope-label {
+        @extend .label-info;
+      }
+
+      .user-list-wrapper {
+        @extend .list-window;
+      }
+
+      .user-item {
+        position: relative;
+        padding: 5px;
+        cursor: pointer;
+
+        em {
+          position: absolute;
+          right: 8px;
+          top: 8px;
+          display: none;
+        }
+
+        &:hover, &.active {
+          em {
+            display: block;
+          }
+
+          background-color: rgb(33, 165, 195, 0.2);
+        }
+      }
+    }
+
+    .add-all-wrapper {
+      flex-shrink: 0;
+      padding: 5px;
+      color: rgb(33, 165, 195);
+      cursor: pointer;
+    }
+  }
+
+  .selected-user-wrapper {
+    display: flex;
+    width: 540px;
+    padding: 5px;
+
+    .selected-user-label {
+      flex-shrink: 0;
+      line-height: 30px;
+    }
+
+    .selected-user-list {
+      flex-grow: 1;
+
+      nz-select {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.basic-list-layout {
+  display: flex;
+  width: 260px;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  height: 290px;
+  padding: 5px;
+  flex-direction: column;
+  position: relative;
+}
+
+.list-window {
+  overflow: auto;
+  height: 100%;
+}
+
+.label-info {
+  position: absolute;
+  top: -16px;
+  left: 18px;
+  background-color: white;
+  color: #21a5c3;
+  padding: 2px;
+}
+
+.pointer {
+  cursor: pointer;
+}
