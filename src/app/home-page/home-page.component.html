@@ -11,6 +11,9 @@
                 (click)="openAddressBookDialog()">choose user
         </button>
       </div>
+      <div class="tips">
+        This is a usage sample which uses service to open the address book dialog.
+      </div>
     </div>
 
     <div class="form-control-sample-wrapper">
@@ -19,6 +22,17 @@
         <form [formGroup]="form">
           <app-user-selector formControlName="users"></app-user-selector>
         </form>
+      </div>
+      <div class="tips">
+        <div>
+          This is a usage sample which encapsulate the quick search and address book to a form-control.
+        </div>
+        <div>
+          You can type user's id or name into the input control to quick search users' information.
+        </div>
+        <div>
+          Also you can click the round button to open the address book.
+        </div>
       </div>
     </div>
   </div>
